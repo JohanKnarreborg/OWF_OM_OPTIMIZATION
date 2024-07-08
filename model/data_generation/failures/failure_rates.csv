@@ -1,0 +1,5 @@
+_,Pitch / Hyd,Other Compon ents,Generat or,Gearbox,Blades,Grease / Oil / Cooling Liq.,Electrical Compon ents,Contacto r/ Circuit Breaker / Relay,Controls,Safety,Sensors,Pumps/ Motors,Hub,Heaters / Coolers,Yaw System,Tower / Foundati on,Power Supply / Converte r,Service Items,Transfor mer
+Major Replacement,0.001,0.001,0.095,0.154,0.001,0.000,0.002,0.002,0.001,0.000,0.000,0.000,0.001,0.000,0.001,0.000,0.005,0.000,0.001
+Major Repair,0.179,0.042,0.321,0.038,0.010,0.006,0.016,0.054,0.054,0.004,0.070,0.043,0.038,0.007,0.006,0.089,0.081,0.001,0.003
+Minor Repair,0.824,0.812,0.485,0.395,0.456,0.407,0.358,0.326,0.355,0.373,0.247,0.278,0.182,0.190,0.162,0.092,0.076,0.108,0.052
+No Cost Data,0.072,0.150,0.098,0.046,0.053,0.058,0.059,0.048,0.018,0.015,0.029,0.025,0.014,0.016,0.020,0.004,0.018,0.016,0.009

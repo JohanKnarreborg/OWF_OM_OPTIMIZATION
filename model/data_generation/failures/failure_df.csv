@@ -1,0 +1,9 @@
+_,Pitch/Hyd,OtherComponents,Generator,Gearbox,Blades,Grease/Oil/CoolingLiq.,ElectricalComponents,Contactor/CircuitBreaker/Relay,Controls,Safety,Sensors,Pumps/Motors,Hub,Heaters/Coolers,YawSystem,Tower/Foundation,PowerSupply/Converter,ServiceItems,Transformer,type
+Major Replacement,0.001,0.001,0.095,0.154,0.001,0.0,0.002,0.002,0.001,0.0,0.0,0.0,0.001,0.0,0.001,0.0,0.005,0.0,0.001,failure_rate
+Major Repair,0.179,0.042,0.321,0.038,0.01,0.006,0.016,0.054,0.054,0.004,0.07,0.043,0.038,0.007,0.006,0.089,0.081,0.001,0.003,failure_rate
+Minor Repair,0.824,0.812,0.485,0.395,0.456,0.407,0.358,0.326,0.355,0.373,0.247,0.278,0.182,0.19,0.162,0.092,0.076,0.108,0.052,failure_rate
+No Cost Data,0.072,0.15,0.098,0.046,0.053,0.058,0.059,0.048,0.018,0.015,0.029,0.025,0.014,0.016,0.02,0.004,0.018,0.016,0.009,failure_rate
+No Cost Data,17.0,8.0,13.0,7.0,28.0,3.0,7.0,5.0,17.0,2.0,8.0,7.0,8.0,5.0,9.0,6.0,10.0,9.0,19.0,repair_hours
+Minor Repair,9.0,5.0,7.0,8.0,9.0,4.0,5.0,4.0,8.0,2.0,8.0,4.0,10.0,5.0,5.0,5.0,7.0,7.0,7.0,repair_hours
+Major Repair,19.0,21.0,24.0,22.0,21.0,18.0,14.0,19.0,14.0,7.0,6.0,10.0,40.0,14.0,20.0,2.0,14.0,,26.0,repair_hours
+Major Replacement,25.0,36.0,81.0,231.0,288.0,0.0,18.0,150.0,12.0,0.0,0.0,0.0,298.0,0.0,49.0,0.0,57.0,0.0,1.0,repair_hours
