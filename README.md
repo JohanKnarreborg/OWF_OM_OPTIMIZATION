@@ -11,47 +11,66 @@ This study aims to reduce the O\&M related costs by building a decision making m
 
 
 ## 🚀 Quick start 🚀
-Define your julia path, call the model.jl file with the applicable model parameters passed as arguments. Here is an example model simulation using 12 turbines: 
+The model can easlisy be run from the command line. First navigate to the model folder. Make sure you have julia installed and define your julia path. Most likely something like: '/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia'
 
-'/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia' model.jl --p_cost=75 --days=15 --w=12 --e_price=0 --day_start=1 --price_quantile=0 --comment=quick_start_example_simulation --h_sm_per_turbine=160 --heuristic_turbines=6 --forecast=EWMA --ctvs=1 --crews=4 --year=2021
+Call the model.jl file with the applicable model parameters passed as arguments. If you do not have access to a Gurobi license, 'HiGHS' can be passed as the chosen solver. Here is an example model simulation using 12 turbines: 
+
+'/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia' model.jl --p_cost=75 --days=31 --w=12 --e_price=0 --day_start=1  --comment=comment --h_sm_per_turbine=160 --heuristic_turbines=6 --forecast=EWMA --ctvs=1 --crews=2  --year=2021 --solver=Gurobi 
 
 The output will be saved in the output folder in a subfolder named after the parameters used. 
 
 ## Model parameters 
---p_cost: (Int, default: 125)
+--p_cost: (Int, default: 75)
 Fixed postponement cost.
+
 --days: (Int, default: 365)
 Number of days to run the simulation.
+
 --w: (Int, default: 36)
 Number of turbines.
+
 --e_price: (Int, default: 0)
 Electricity price for a fixed price forecast. (Production optimized)
+
 --day_start: (Int, default: 1)
 Start day.
+
 --price_quantile: (Int, default: 0)
-Quantile, e.g., 80. Not used if 0. 
+Quantile, e.g., 80. If 0 then not used. 
+
 --comment: (String, default: "")
 Comment to add to output file.
+
 --h_sm_per_turbine: (Int, default: 160)
 Quarters of SM per turbine.
+
 --heuristic_turbines: (Int, default: 5)
 Number of turbines used in the matheuristic.
+
 --forecast: (String, default: "EWMA")
 Forecast method.
+
 --ctvs: (Int, default: 1)
 Number of CTVs.
+
 --crews: (Int, default: 4)
 Number of crews.
+
 --naive_method_quarters: (Int, default: 0)
 Number of quarters the NAIVE method should do each day. If 0, the NAIVE method is not used.
+
 --naive_method_startday: (Int, default: 5)
 Day to start the naive method.
+
 --year: (Int, default: 2021)
 Year.
+
 --co2tax: (Int, default: 0)
 CO2 tax; if 0, normal fuel cost is used.
+
 --solver: (String, default: "HiGHS")
 Either Gurobi or HiGHS solver.
 
-
 ## Output analysis 
+
+The output from each model can be explored using the output analysis notebook.

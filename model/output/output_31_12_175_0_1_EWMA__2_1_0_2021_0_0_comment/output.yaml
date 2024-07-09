@@ -1,9 +1,9 @@
-Total time: 76.474465417
-Model definition time: 25.802293304
-Model solving time: 48.44143568999995
-Days: 365
-Turbines: 6
-PP_cost: 75
+Total time: 44.74614075
+Model definition time: 17.850123543
+Model solving time: 25.902765586000005
+Days: 31
+Turbines: 12
+PP_cost: 175
 e_price: 0
 Fuel price: 0.25
 Day_start: 1
@@ -15,4 +15,4 @@ naive_method_startday: 5
 Year: 2021
 Price_quantile: 0
 Comment: comment
-Timestamp: 2024-07-08T15:26:07.667
+Timestamp: 2024-07-09T08:19:04.918
