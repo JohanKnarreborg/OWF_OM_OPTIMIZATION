@@ -1,6 +1,11 @@
 # OWF O&M OPTIMIZATION
 Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Knarreborg. 
 
+<div align="center">
+  <img width="400" src="[https://github.com/JohanKnarreborg/DEEP_BIOMED/blob/main/UNETR.gif](https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif)">
+  <br>
+  <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation 🤯</em>
+</div>
 
 ## Project description 
 One of the main cost drivers of offshore wind farms (OWF) is the Operations and Maintenance (O\&M) activities conducted throughout the lifetime of a wind farm. As seen in \cite{OM_costs} the cost of O\&M related activities can account for up to 25\%-30\% of the total lifetime costs. 
