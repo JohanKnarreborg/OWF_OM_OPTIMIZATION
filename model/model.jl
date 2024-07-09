@@ -4,7 +4,7 @@ using NPZ
 using ArgParse
 using DataFrames
 using Dates
-include("data/julia_function.jl")
+include("data/jl_function.jl")
 
 
 #define timing variables to time model definition and solving time

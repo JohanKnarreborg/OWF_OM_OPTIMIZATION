@@ -4,13 +4,13 @@ Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen
 <div align="center">
   <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif">
   <br>
-  <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation 💨</em>
+  <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation for Kriegers Flak💨</em>
 </div>
 
 ## Project description 
-One of the main cost drivers of offshore wind farms (OWF) is the Operations and Maintenance (O&M) activities conducted throughout the lifetime of a wind farm. As seen in Röckmann, Lagerveld, and Stavenuiter 2017 the cost of O&M related activities can account for up to 25%-30% of the total lifetime costs, and therefore crucial to minimize.
+One of the main cost drivers of offshore wind farms (OWF) is the Operations and Maintenance (O&M) activities conducted throughout the lifetime of a wind farm. As seen in (Röckmann, Lagerveld, and Stavenuiter 2017) the cost of O&M related activities can account for up to 25%-30% of the total lifetime costs, and therefore crucial to minimize.
 
-This study aims to reduce the O&M related costs by building a decision making model that can make informed decisions based on forecasts of power prices as well as power production. This will allow an OWF owner to reduce the opportunity costs of shutting down their wind turbines to conduct maintenance. 
+This study aims to reduce the O&M related costs by building a decision making model that can make informed decisions based on forecasts of power prices as well as power production. This will allow an OWF operator to reduce the opportunity costs of shutting down their wind turbines to conduct maintenance and reducing the lifetime cost of the OWF. 
 
 
 ## 🚀 Quick start 🚀
@@ -77,3 +77,37 @@ Either Gurobi or HiGHS solver.
 ## Output analysis 
 
 The output from each model can be explored using the output analysis notebook.
+
+
+##  Code structure 
+The code of the project is developed in Python 3.8 and uses Hydra for configuration management. The code is structured as follows:
+    
+```
+README.md               # This file
+requirements.txt        # Requirements file for python environment
+model                   # Main model folder
+|   model.jl            # Julia file containing the model
+|   output              # Output folder from the model
+|   |   ...
+|   data                # Folder for storing main data for model 
+|   |   layout          # Folder containing all data related to OWF layout
+|   |   |   ...
+|   |   maintenance     # Folder containing the failure data for turbines
+|   |   |   ...
+|   |   prices          # Folder containing all price forecasts
+|   |   |   ...
+|   |   sets            # Folder containing the sets used by the model
+|   |   |   ... 
+|   |   weather         # Folder containing weather forecast and actual weather 
+|   |   |   ... 
+|   |   jl_function.jl  # Julia file containing the functions used by model
+|   data_generation     # Folder for data generation
+|   |   failures        # Generation file for failures 
+|   |   |   ...
+|   |   price_forecasts # Price forecast files 
+|   |   |   ... 
+|   |   weather_forecast# Weather forecasts generating the sunthetic forecast
+|   |   |   ...
+output_analysis         # Folder for output analysis
+|   output_analysis.ipynb
+```
