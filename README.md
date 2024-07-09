@@ -2,7 +2,7 @@
 Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Knarreborg. 
 
 <div align="center">
-  <img width="400" src="[https://github.com/JohanKnarreborg/DEEP_BIOMED/blob/main/UNETR.gif](https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif)">
+  <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif">
   <br>
   <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation 🤯</em>
 </div>
