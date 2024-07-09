@@ -4,15 +4,13 @@ Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen
 <div align="center">
   <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif">
   <br>
-  <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation 🤯</em>
+  <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation 💨</em>
 </div>
 
 ## Project description 
-One of the main cost drivers of offshore wind farms (OWF) is the Operations and Maintenance (O\&M) activities conducted throughout the lifetime of a wind farm. As seen in \cite{OM_costs} the cost of O\&M related activities can account for up to 25\%-30\% of the total lifetime costs. 
+One of the main cost drivers of offshore wind farms (OWF) is the Operations and Maintenance (O&M) activities conducted throughout the lifetime of a wind farm. As seen in Röckmann, Lagerveld, and Stavenuiter 2017 the cost of O&M related activities can account for up to 25%-30% of the total lifetime costs, and therefore crucial to minimize.
 
-Since the start of the energy crisis at the end of 2021 there has been an increase in electricity prices as well as volatility (\cite{energy_crisis}). This should further incentivize power producers to maximize their sale of power at price peaks and place maintenance activities in periods of low production and prices. By reducing the O\&M related costs from operating an OWF the business case of investing and owning OWF should be improved. This should allow an easier transition to a more sustainable future with renewable electricity sources. It should also provide a more certain investment opportunity as the costs from O\&M activities will be more predictable.
-
-This study aims to reduce the O\&M related costs by building a decision making model that can make informed decisions based on forecasts of power prices as well as power production. This will allow an OWF owner to reduce the opportunity costs of shutting down their wind turbines to conduct maintenance. 
+This study aims to reduce the O&M related costs by building a decision making model that can make informed decisions based on forecasts of power prices as well as power production. This will allow an OWF owner to reduce the opportunity costs of shutting down their wind turbines to conduct maintenance. 
 
 
 ## 🚀 Quick start 🚀
