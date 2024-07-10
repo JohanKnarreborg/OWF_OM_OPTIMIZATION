@@ -80,19 +80,15 @@ The output from each model can be explored using the output analysis notebook. H
 #### Model output  
 The model outputs a number of files containing information about all model decisions. The model outputs are: 
 
-**r_sm.npy - Bin - [quarters, turbine]**    - Whether each turbine has scheduled maintenance performed in each quarter.
-
-**h_sm.npy - Int - [quarters, turbine]**    - How many quarters of scheduled maintenance is remaining for each turbine.
-
-**r_cm.npy - Bin - [quarters, turbine]**    - Whether each turbine has corrective maintenance performed in each quarter.
-
-**h_cm.npy - Int - [quarters, turbine]**    - How many quarters of corrective maintenance is remaining for each turbine.
-
-**Z.npy    - Bin - [CTV, quarters, nodes]** - Whether each CTV is at node n in quarter t.
-
-**MC.npy   - Int - [days]**                 - Daily to total cost of fuel. 
-
-**X.npy    - Bin - [quarters, turbine]**    - Whether each turbine is producing in each quarter. Rather use r_sm and h_cm to determine if turbine is running. This will be zero when no wind is forecasted or zero prices are forecasted.
+| **File**                                 | **Description**                                                                                   |
+|------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **r_sm.npy - Bin - [quarters, turbine]** | Whether each turbine has scheduled maintenance performed in each quarter.                         |
+| **h_sm.npy - Int - [quarters, turbine]** | How many quarters of scheduled maintenance is remaining for each turbine.                         |
+| **r_cm.npy - Bin - [quarters, turbine]** | Whether each turbine has corrective maintenance performed in each quarter.                        |
+| **h_cm.npy - Int - [quarters, turbine]** | How many quarters of corrective maintenance is remaining for each turbine.                        |
+| **Z.npy - Bin - [CTV, quarters, nodes]** | Whether each CTV is at node n in quarter t.                                                       |
+| **MC.npy - Int - [days]**                | Daily to total cost of fuel.                                                                      |
+| **X.npy - Bin - [quarters, turbine]**    | Whether each turbine is producing in each quarter. Rather use r_sm and h_cm to determine if turbine is running. This will be zero when no wind is forecasted or zero prices are forecasted. |
 
 ## Input data
 TBD...
