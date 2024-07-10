@@ -1,6 +1,6 @@
-Total time: 44.74614075
-Model definition time: 17.850123543
-Model solving time: 25.902765586000005
+Total time: 41.569844334
+Model definition time: 15.808550711
+Model solving time: 24.886204414
 Days: 31
 Turbines: 12
 PP_cost: 175
@@ -15,4 +15,4 @@ naive_method_startday: 5
 Year: 2021
 Price_quantile: 0
 Comment: comment
-Timestamp: 2024-07-09T08:19:04.918
+Timestamp: 2024-07-10T08:02:45.038

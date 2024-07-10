@@ -1,5 +1,5 @@
 # OWF O&M OPTIMIZATION
-Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Knarreborg. 
+Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Østergaard Knarreborg. 
 
 <div align="center">
   <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif">
@@ -75,12 +75,21 @@ CO2 tax; if 0, normal fuel cost is used.
 Either Gurobi or HiGHS solver.
 
 ## Output analysis 
+The output from each model can be explored using the output analysis notebook. Here example plots for an output analysis is available. 
 
-The output from each model can be explored using the output analysis notebook.
+#### model output  
+The model outputs a number of files containing information about all model decisions. The model outputs are: 
+r_sm.npy - Bin - [quarters, turbine]    - Whether each turbine has scheduled maintenance performed in each quarter.
+h_sm.npy - Int - [quarters, turbine]    - How many quarters of scheduled maintenance is remaining for each turbine.
+r_cm.npy - Bin - [quarters, turbine]    - Whether each turbine has corrective maintenance performed in each quarter.
+h_cm.npy - Int - [quarters, turbine]    - How many quarters of corrective maintenance is remaining for each turbine.
+Z.npy    - Bin - [CTV, quarters, nodes] - Whether each CTV is at node n in quarter t.
+MC.npy   - Int - [days]                 - Daily to total cost of fuel. 
+X.npy    - Bin - [quarters, turbine]    - Whether each turbine is producing in each quarter. Rather use r_sm and h_cm to determine if turbine is running. This will be zero when no wind is forecasted or zero prices are forecasted.
 
 
 ##  Code structure 
-The code of the project is developed in Python 3.8 and uses Hydra for configuration management. The code is structured as follows:
+The main OR model is developed in julia. All other code for this project has been developed in python 3.12. The code is structured as follows:
     
 ```
 README.md               # This file

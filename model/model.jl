@@ -629,7 +629,7 @@ for day in 1:days
     global r_sm_ = round.(JuMP.value.(r_sm)[1:96,:],digits = 0) 
     global r_cm_ = round.(JuMP.value.(r_cm)[1:96,:],digits = 0) 
     global Z_ = round.(JuMP.value.(Z)[:,1:96,:],digits = 0) 
-    global X_ = round.(JuMP.value.(x)[1:96,],digits = 0) 
+    global X_ = round.(JuMP.value.(x)[1:96,:],digits = 0) 
     global MC_ = JuMP.value.(MC[1:96,])
     global MC_cost = sum(MC_[t] for t = 1:24*4) 
     
@@ -643,7 +643,7 @@ for day in 1:days
         global Z_ls = Z_
         global X_ls = X_
         global MC_ls = MC_cost
-    else
+    else 
         H_sm_ls = cat(H_sm_ls,H_sm_,dims=1)
         h_cm_ls = cat(h_cm_ls,h_cm_,dims=1) 
         r_sm_ls = cat(r_sm_ls,r_sm_,dims=1)
