@@ -1,0 +1,18 @@
+Total time: 135.017365208
+Model definition time: 19.283918209999996
+Model solving time: 114.741192164
+Days: 31
+Turbines: 12
+PP_cost: 75
+e_price: 0
+Fuel price: 0.25
+Day_start: 1
+Forecast: EWMA
+Crews: 2
+CTVs: 2
+naive_method_quarters: 0
+naive_method_startday: 5
+Year: 2021
+Price_quantile: 0
+Comment: comment
+Timestamp: 2024-07-10T08:05:30.936
