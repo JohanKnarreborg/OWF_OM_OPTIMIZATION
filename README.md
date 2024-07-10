@@ -79,6 +79,7 @@ The output from each model can be explored using the output analysis notebook. H
 
 #### Model output  
 The model outputs a number of files containing information about all model decisions. The model outputs are: 
+
 **r_sm.npy - Bin - [quarters, turbine]**    - Whether each turbine has scheduled maintenance performed in each quarter.
 
 **h_sm.npy - Int - [quarters, turbine]**    - How many quarters of scheduled maintenance is remaining for each turbine.
