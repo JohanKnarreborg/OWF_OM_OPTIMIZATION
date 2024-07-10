@@ -1,4 +1,4 @@
-# OWF O&M OPTIMIZATION
+# Revenue based OWF O&M Optimization 
 Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Østergaard Knarreborg. 
 
 <div align="center">
