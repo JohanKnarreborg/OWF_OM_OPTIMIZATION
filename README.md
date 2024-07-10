@@ -102,7 +102,7 @@ The OR model is a mixed-integer linear programming model that optimizes the O&M 
   <em>Model architecture for long-term simulations. </em>
 </div> 
 
-The model can be run with a planning horizon of more than 1 day, but only locks in the maintenance plan for the coming day. The maintenance plan is based on the remaining maintenance for each turbine, a weather, and power market forecasts. This process is illustrated below: 
+The model can be run with a planning horizon of more than 1 day, but only locks in the maintenance plan for the coming day. The maintenance plan is based on the remaining maintenance for each turbine, a weather, and power market forecasts. The planning is done at 12 o'clock noon to allow for the plan to be integrated in the day-ahead market bid. This process is illustrated below: 
 
 <div align="center">
   <img width="600" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/forecast_diagram.png">
