@@ -100,7 +100,15 @@ The OR model is a mixed-integer linear programming model that optimizes the O&M 
   <img width="600" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/flow_chart.png">
   <br>
   <em>Model architecture for long-term simulations. </em>
-</div>
+</div> 
+
+The model can be run with a planning horizon of more than 1 day, but only locks in the maintenance plan for the coming day. The maintenance plan is based on the remaining maintenance for each turbine, a weather, and power market forecasts. This process is illustrated below: 
+
+<div align="center">
+  <img width="600" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/forecast_diagram.png">
+  <br>
+  <em>Process of forecasting weather and prices to place maintenance over the planning horizon. </em>
+</div> 
 
 ##  Code structure 
 The main OR model is developed in julia. All other code for this project has been developed in python 3.12. The code is structured as follows:
