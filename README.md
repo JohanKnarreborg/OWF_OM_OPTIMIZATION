@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-# Revenue based OWF O&M Optimization 
+  <h1>Revenue based OWF O&M Optimization</h1>
 </div>
 Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Østergaard Knarreborg. 
 
