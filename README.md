@@ -97,7 +97,7 @@ TBD...
 The OR model is a mixed-integer linear programming model that optimizes the O&M activities for an OWF. The model is based on a rolling horizon approach where the model is solved for each day in the simulation. For each day a part of the OR model is redefined to fit the current day. The basic model running structure is shown below: 
 
 <div align="center">
-  <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/flow_chart.png">
+  <img width="600" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/flow_chart.png">
   <br>
   <em>Model architecture for long-term simulations. </em>
 </div>
