@@ -25,39 +25,26 @@ Call the model.jl file with the applicable model parameters passed as arguments.
 The output will be saved in the output folder in a subfolder named after the parameters used. 
 
 ## Model parameters 
-**--p_cost: (Int, default: 75)**               Fixed postponement cost.
+| **Parameter**               | **Type** | **Default** | **Description**                                                                                      |
+|-----------------------------|----------|-------------|------------------------------------------------------------------------------------------------------|
+| **--p_cost**                | Int      | 75          | Fixed postponement cost.                                                                             |
+| **--days**                  | Int      | 365         | Number of days to run the simulation.                                                                |
+| **--w**                     | Int      | 36          | Number of turbines.                                                                                  |
+| **--e_price**               | Int      | 0           | Electricity price for a fixed price forecast. (Production optimized)                                 |
+| **--day_start**             | Int      | 1           | Start day.                                                                                           |
+| **--price_quantile**        | Int      | 0           | Quantile, e.g., 80. If 0 then not used.                                                              |
+| **--comment**               | String   | ""          | Comment to add to output file.                                                                       |
+| **--h_sm_per_turbine**      | Int      | 160         | Quarters of SM per turbine.                                                                          |
+| **--heuristic_turbines**    | Int      | 5           | Number of turbines used in the matheuristic.                                                         |
+| **--forecast**              | String   | "EWMA"      | Forecast method.                                                                                     |
+| **--ctvs**                  | Int      | 1           | Number of CTVs.                                                                                      |
+| **--crews**                 | Int      | 4           | Number of crews.                                                                                     |
+| **--naive_method_quarters** | Int      | 0           | Number of quarters the NAIVE method should do each day. If 0, the NAIVE method is not used.           |
+| **--naive_method_startday** | Int      | 5           | Day to start the naive method.                                                                       |
+| **--year**                  | Int      | 2021        | Year.                                                                                                |
+| **--co2tax**                | Int      | 0           | CO2 tax; if 0, normal fuel cost is used.                                                             |
+| **--solver**                | String   | "HiGHS"     | Either Gurobi or HiGHS solver.                                                                       |
 
-**--days: (Int, default: 365)**                Number of days to run the simulation.
-
-**--w: (Int, default: 36)**                    Number of turbines.
-
-**--e_price: (Int, default: 0)**               Electricity price for a fixed price forecast. (Production optimized)
-
-**--day_start: (Int, default: 1)**             Start day.
-
-**--price_quantile: (Int, default: 0)**        Quantile, e.g., 80. If 0 then not used. 
-
-**--comment: (String, default: "")**           Comment to add to output file.
-
-**--h_sm_per_turbine: (Int, default: 160)**    Quarters of SM per turbine.
-
-**--heuristic_turbines: (Int, default: 5)**    Number of turbines used in the matheuristic.
-
-**--forecast: (String, default: "EWMA")**      Forecast method.
-
-**--ctvs: (Int, default: 1)**                  Number of CTVs.
-
-**--crews: (Int, default: 4)**                 Number of crews.
-
-**--naive_method_quarters: (Int, default: 0)** Number of quarters the NAIVE method should do each day. If 0, the NAIVE method is not used.
-
-**--naive_method_startday: (Int, default: 5)**  Day to start the naive method.
-
-**--year: (Int, default: 2021)**                Year.
-
-**--co2tax: (Int, default: 0)**                 CO2 tax; if 0, normal fuel cost is used.
-
-**--solver: (String, default: "HiGHS")**        Either Gurobi or HiGHS solver.
 
 ## Output analysis 
 The output from each model can be explored using the output analysis notebook. Here example plots for an output analysis is available. 
@@ -76,7 +63,20 @@ The model outputs a number of files containing information about all model decis
 | **X.npy**    | Bin      | [quarters, turbine]                      | Whether each turbine is producing in each quarter. Rather use r_sm and h_cm to determine if turbine is running. This will be zero when no wind is forecasted or zero prices are forecasted. |
 
 ## Input data
-TBD...
+There are several input files that needs to be generated before running the model on a custom year or OWF. Here is a description of each of them.
+
+| **Column**          | **Input**                     | **Size**                             | **Unit**    | **Description**                                                                                                                                                                                  |
+|---------------------|-------------------------------|--------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **wind_forecast_mat**   | [days, planning horizon (h)]  | m/s                                  | This contains the wind speed forecast for the OWF on an hourly basis. Each day has a unique forecast. To be realistic, the weather forecast should be made from the day before at 12 o'clock, but only the data after midnight should be included here. |
+| **wh_forecast_mat**     | [hours for whole simulation period] | m                             | Since perfect knowledge of wave height is assumed, this input contains the yearly wave height data on an hourly basis.                                                                            |
+| **prices_mat**          | [hours for whole simulation period] | €                             | To be able to calculate quantiles of past prices, the real day-ahead prices should be given to the model.                                                                                         |
+| **p_forecast**          | [days, planning horizon (h)]  | €                                    | For the chosen price forecast method, the price forecast for each day should be given to the model with an hourly forecast.                                                                       |
+| **H_sm**                | [days, turbines]              | quarters                             | Not used in our project, but can be used to assign scheduled maintenance throughout the simulation period instead of at day 1.                                                                    |
+| **H_cm**                | [days, turbines]              | quarters                             | This contains the amount of corrective maintenance that should be added to each turbine for each day.                                                                                             |
+| **D_time**              | [turbines, turbines]          | quarters                             | The minimum amount of quarters needed to go between any two turbines.                                                                                                                             |
+| **D_meter**             | [turbines, turbines]          | m                                    | The distance in meters between any two turbines.                                                                                                                                                  |
+| **con_matrix**          | [turbines, turbines, arc lookout period] | liters         | The amount of liters needed to go between any two turbines using a given amount of quarters.                                                                                                      |
+
 
 ##  Model architecture
 The OR model is a mixed-integer linear programming model that optimizes the O&M activities for an OWF. The model is based on a rolling horizon approach where the model is solved for each day in the simulation. For each day a part of the OR model is redefined to fit the current day. The basic model running structure is shown below: 
