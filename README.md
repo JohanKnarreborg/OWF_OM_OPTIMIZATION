@@ -4,7 +4,7 @@
 Thesis repository containing OWF O&M model created by Jonathan Hjorthøj-Nielsen and Johan Østergaard Knarreborg. 
 
 <div align="center">
-  <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/setup/figs/maintenance.gif">
+  <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/maintenance.gif">
   <br>
   <em>Corrective Maintenance (blue) and Scheduled Maintenance (white) for a yearly simulation for Kriegers Flak💨</em>
 </div>
