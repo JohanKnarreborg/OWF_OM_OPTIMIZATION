@@ -445,10 +445,7 @@ for day in 1:days
 
         @constraint(m, [t=1:T, w=1:W], sum(Z[ctv,t,w] for ctv in 1:CTV) <= 1) #CTV only at one location at a time 
         @constraint(m, [ctv=1:CTV], sum(Z[ctv,t,W+ctv_other] for t in 1:T, ctv_other in 1:CTV if ctv_other != ctv) == 0) # this constraint prevents CTVs from switching harbours
-        #for ctv in 1:CTV-1
-        #    @constraint(m, sum(Z[ctv,t,W] for t in 1:T,w=1:W) >= sum(Z[ctv+1,t,W] for t in 1:T,w=1:W)) #Use CTVs in order
-        #end
-
+        
 
         println("CTV constraints done")
 
