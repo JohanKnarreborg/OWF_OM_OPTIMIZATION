@@ -61,6 +61,7 @@ The model outputs a number of files containing information about all model decis
 | **Z.npy**    | Bin      | [CTV, quarters, nodes]                   | Whether each CTV is at node n in quarter t.                                                       |
 | **MC.npy**   | Int      | [days]                                   | Daily to total cost of fuel.                                                                      |
 | **X.npy**    | Bin      | [quarters, turbine]                      | Whether each turbine is producing in each quarter. Rather use r_sm and h_cm to determine if turbine is running. This will be zero when no wind is forecasted or zero prices are forecasted. |
+| **output.yaml**    |  -    |          -            |A yaml file containing model definition- and solve-time, together with all model run detailts.  |
 
 ## Input data
 There are several input files that needs to be generated before running the model on a custom year or OWF. Here is a description of each of them.
