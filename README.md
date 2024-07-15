@@ -1,7 +1,7 @@
 <div style="text-align: center;">
   <h1>Revenue based OWF O&M Optimization</h1>
 </div>
-Thesis repository containing OWF O&M model created by Jonathan Hjortshøj-Nielsen and Johan Østergaard Knarreborg. 
+Thesis repository containing OWF O&M model created by Jonathan Hjortshøj-Nielsen and Johan Østergaard Knarreborg. Thesis describing the work behind this GitHub can be found [here](https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/Opportunistic_scheduling_of_wind_farm_OM_activities.pdf).
 
 <div align="center">
   <img width="400" src="https://github.com/JohanKnarreborg/OWF_OM_OPTIMIZATION/blob/main/figs/maintenance.gif">
