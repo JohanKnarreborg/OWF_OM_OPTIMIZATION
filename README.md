@@ -1,8 +1,7 @@
 <div style="text-align: center;">
   <h1>Revenue based OWF O&M Optimization</h1>
 </div>
-Thesis repository containing OWF O&M model created by Jonathan Hjortshøj-Nielsen and Johan Østergaard Knarreborg. Thesis describing the work behind this GitHub can be downloaded from the file: Opportunistic_scheduling_of_wind_farm_OM_activities.pdf.
-
+Thesis repository containing OWF O&M model created by Jonathan Hjortshøj-Nielsen and Johan Østergaard Knarreborg.
 <br/>
 
 <div align="center">
@@ -16,6 +15,7 @@ One of the main cost drivers of offshore wind farms (OWF) is the Operations and 
 
 This study aims to reduce the O&M related costs by building a decision making model that can make informed decisions based on forecasts of power prices as well as power production. This will allow an OWF operator to reduce the opportunity costs of shutting down their wind turbines to conduct maintenance and reducing the lifetime cost of the OWF. 
 
+Thesis describing the work behind this GitHub can be downloaded from the file: Opportunistic_scheduling_of_wind_farm_OM_activities.pdf.
 
 ## 🚀 Quick start 🚀
 The model can easlisy be run from the command line. First navigate to the model folder. Make sure you have julia installed and define your julia path. Most likely something like: '/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia'
