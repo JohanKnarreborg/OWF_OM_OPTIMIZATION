@@ -502,7 +502,9 @@ for day in 1:days
 
         #see this link on deletion times https://discourse.julialang.org/t/jump-delete-is-slower-than-building-a-new-model/92597/6. Constraints updated between runs should not be sparse arrays, since deleting these is very slow.
         delete(m, vec(WHL_1))
+        delete(m, vec(WHL_2))
         delete(m, vec(WSL_1))
+        delete(m, vec(WSL_2))
         delete(m, vec(HEU_1))
         delete(m, vec(HEU_2))
         delete(m, vec(HEU_3))
@@ -522,8 +524,10 @@ for day in 1:days
 
 
     ##### Define day-specific constraints ####### 
-    WHL_1 = @constraint(m,[t=1:T,ctv=1:CTV],wh_forecast_extended[t,1] <= WHL+ M_wave_wind_limit*(Z[ctv,t,N-(CTV-ctv)])) #in habour if WHL
-    WSL_1 = @constraint(m,[t=1:T,ctv=1:CTV],wind_forecast_extended[t,1] <= WSL+ M_wave_wind_limit*(Z[ctv,t,N-(CTV-ctv)])) #in habour if WSL
+    WHL_1 = @constraint(m,[t=1:T,ctv=1:CTV],wh_forecast_extended[t,1] <= WHL+ M_wave_wind_limit*(Z[ctv,t,W+ctv])) #in habour if WHL
+    WHL_2 = @constraint(m, [t=1:T],wh_forecast_extended[t,1] <=WHL + M_wave_wind_limit*(1-sum(r_sm[t,w] + r_cm[t,w] for w in 1:W))) # no maintenance if WHL
+    WSL_1 = @constraint(m,[t=1:T,ctv=1:CTV],wind_forecast_extended[t,1] <= WSL+ M_wave_wind_limit*(Z[ctv,t,W+ctv])) #in habour if WSL 
+    WSL_2 = @constraint(m, [t=1:T],wind_forecast_extended[t,1] <=WSL + M_wave_wind_limit*(1-sum(r_sm[t,w] + r_cm[t,w] for w in 1:W)) ) # no maintenance if WSL
     HCAT_1 = @constraint(m, [ w=1:W], h_cm[1,w] == H_cm[1,w])
     HSCH_1 = @constraint(m, [ w=1:W], h_sm[1,w] == H_sm[1,w])
     PP_con = @constraint(m, PP == sum(h_sm[T,w]*PP_cost/4 for w in 1:W) + CM_cost*sum(h_cm[T,:])) 
